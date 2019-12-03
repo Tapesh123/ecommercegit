@@ -1,0 +1,79 @@
+https://react-bootstrap.github.io/getting-started/introduction/
+
+Installation#
+The best way to consume React-Bootstrap is via the npm package which you can install with npm (or yarn if you prefer).
+
+If you plan on customizing the Bootstrap Sass files, or don't want to use a CDN for the stylesheet, it may be helpful to install vanilla Bootstrap as well.
+
+npm install react-bootstrap bootstrap
+
+
+Stylesheets#
+Because React-Bootstrap doesn't depend on a very precise version of Bootstrap, we don't ship with any included css. However, some stylesheet is required to use these components.
+
+{/* The following line can be included in your src/index.js or App.js file*/}
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+How and which Bootstrap styles you include is up to you, but the simplest way is to include the latest styles from the CDN. A little more information about the benefits of using a CDN can be found here.
+
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+
+
+     <div className="jumbotron">
+        <div className="row">
+          <div className="col-md-2">User name</div>
+          <div className="col-md-6">
+            <input type="text"></input>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-2">Password</div>
+          <div className="col-md-6">
+            <input type="password"></input>
+          </div>
+          <button className="btn btn-success">Login</button>
+        </div>
+      </div>
+
+
+      //customized login form
+
+import React, { Component } from "react";
+import './Login.css';
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { FacebookLoginButton } from "react-social-login-buttons";
+
+
+       <Form className="login-form">
+        <h1>
+          <span className="font-weight-bold"> Anagh-Kart</span>.com
+        </h1>
+        <h2 className="text-center"> Welcome </h2>
+        <FormGroup>
+          <Label> Email </Label>
+          <Input type="email" placeholder="Email" />
+        </FormGroup>
+        <FormGroup>
+          <Label> Password </Label>
+          <Input type="password" placeholder="Password" />
+        </FormGroup>
+        <Button className="btn-lg btn-dark btn-block"> Log in </Button>
+        <div className="text-center pt-2">
+          or you can continue with your social account
+        </div>
+        <FacebookLoginButton className='mt-4 mb-4'/>
+        <div className='text-center'>
+    <a href='/sign-up'> Sign Up </a>
+          <span className = 'p-2'>|</span>
+          <a href='/sign-up'> Forgot Password </a>
+
+        </div>
+
+      </Form>
